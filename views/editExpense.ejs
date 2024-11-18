@@ -1,0 +1,22 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="bg-zinc-900">
+<h1 class="text-white text-3xl h-20 pt-5 justify-center flex">Your Expenses</h1>
+</div>
+<div>
+
+<body>
+    <div class="relative flex min-h-screen justify-center overflow-hidden bg-black ">
+        <div class="relative bg-black sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+          <div class="mx-auto max-w-md">
+
+            <form action="/expenses/<%= expense._id %>?_method=PUT" method="POST">
+                <input class="border-2 border-black rounded-md  mt-12 pl-2 h-10" type="text" name="title" value="<%= expense.title %>" required />
+                <input class="border-2 border-black rounded-md mt-12 pl-2 h-10" type="number" name="amount" value="<%= expense.amount %>" required />
+                <button type="submit" class="bg-green-600 rounded-md w-40 h-10 text-white hover:bg-green-800 mt-10 ml-28">Update</button>
+            </form>
+            
+              </div>
+              <a class="m-20 ml-44 text-green-700" href="/expenses">back</a>
+            </div>
+          </div>
+</body>

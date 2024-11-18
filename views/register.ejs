@@ -1,0 +1,21 @@
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<body>
+    <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-black py-6 sm:py-12">
+        <div class="relative bg-zinc-900 px-6 pt-10 pb-8 shadow-xl ring-1 ring-white sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+          <div class="mx-auto max-w-md">
+            <h1 class="text-3xl mx-24 mb-4 text-white">Create an account</h1>
+            <form action="/auth/login" method="POST">
+                <input class ="block mt-3 w-full px-3 py-2 rounded-md bg-transparent border-2 border-zinc-700 outline-none text-white" type="text" placeholder="Username" name="username" required/>
+                <input class ="block mt-3 w-full px-3 py-2 rounded-md bg-transparent border-2 border-zinc-700 outline-none text-white" type="email" placeholder="Email" name="email" required/>
+                <input class ="block mt-3 w-full px-3 py-2 rounded-md bg-transparent border-2 border-zinc-700 outline-none text-white" type="password" placeholder="Password" name="password" required/>
+                <input class ="text-white block mt-3 w-full px-3 py-2 rounded-md bg-zinc-900 hover:text-black hover:bg-blue-300 cursor-pointer font-semibold border-2 border-zinc-700 outline-none " type="submit" value="Register"/>
+            </form>
+            
+              </div>
+              <a class="m-20 text-blue-700" href="/auth/login">Already have an account? Login</a>
+            </div>
+          </div>
+</body>
+

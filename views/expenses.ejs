@@ -1,0 +1,43 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<body class="bg-black">
+<div class="bg-zinc-900">
+<h1 class="text-white text-3xl h-20 pt-5 justify-center flex">Your Expenses</h1>
+</div>
+<div class="bg-black">
+<div class="mt-10 ml-60 w-20 rounded-md h-10 bg-black">
+<a href="/auth/logout" class = "text-red-500 ">Logout</a>
+</div>
+<form action="/expenses" class ="w-full"method="POST">
+  <input class="border-2 border-white rounded-md ml-64 w-64 mt-12 pl-2 h-10 bg-transparent" type="text" name="title" placeholder="Expense Title" required />
+  <input class="border-2 border-white rounded-md mt-12 pl-2 h-10 bg-transparent" type="number" name="amount" placeholder="Amount" required />
+  <button type="submit" class="bg-green-600 rounded-md w-40 h-10 text-white hover:bg-green-800">Add Expense</button>
+</form>
+
+<table class="mt-20 ml-60 border-collapse border border-gray-300">
+    <thead>
+      <tr class="bg-zinc-900">
+        <th class="border border-gray-300 px-4 py-2 w-60 text-white">Expense Title</th>
+        <th class="border border-gray-300 px-4 py-2 w-60 text-white">Amount</th>
+        <th class="border border-gray-300 px-4 py-2"></th>
+        <th class="border border-gray-300 px-4 py-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% expenses.forEach(expense => { %>
+        <tr>
+          <td class="border border-gray-300 px-4 py-2 text-white"><%= expense.title %></td>
+          <td class="border border-gray-300 px-4 py-2 text-white"><%= expense.amount %></td>
+          <td class="border border-gray-300 px-4 py-2 text-center">
+            <a href="/expenses/<%= expense._id %>/edit" class="text-blue-500 hover:underline">Edit</a>
+          </td>
+          <td class="border border-gray-300 px-4 py-2 text-center">
+            <form action="/expenses/<%= expense._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit" class="text-red-500 hover:underline">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  </div>
+  
