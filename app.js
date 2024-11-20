@@ -9,7 +9,7 @@ const authRoutes = require('./routes/auth');
 const expenseRoutes = require('./routes/expenses');
 
 const app = express();
-mongoose.connect('mongodb://127.0.0.1:27017/expense_manager', {
+mongoose.connect('mongodb+srv://Saumyajain16:Saumyajain16@cluster0.khpkz.mongodb.net/user?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
